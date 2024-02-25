@@ -38,3 +38,9 @@
         </button>
     </ng-container>
 </mat-dialog-actions>
+
+<ng-container *ngIf="isSaving$ | async as isSaving">
+  <ng-container *ngIf="isSaving">
+    <loading [message]="'Saving ...'"> </loading>
+  </ng-container>
+</ng-container>

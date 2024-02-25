@@ -7,6 +7,7 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { CommonModule } from "@angular/common";
 import { NotesDetailComponent } from "./detail/notes-detail.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { LoadingModule } from "../ui/loading/loading.module";
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
         ReactiveFormsModule,
         FormsModule,
         MatIconModule,
-        MatDialogModule
+        MatDialogModule,
+        LoadingModule
     ],
     exports: [
         RouterModule

@@ -22,7 +22,7 @@
   <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <ng-container *ngIf="state$ | async as state">
             <ng-container *ngIf="state.isLoading">
-                    Carregando ...
+                <loading [message]="'Loading notes ...'"></loading>
             </ng-container>
             <ng-container *ngIf="state.notes.length > 0; else noNotes">
                 <div *ngFor="let note of state.notes">
@@ -38,12 +38,14 @@
                 </div>
             </ng-container>
             <ng-template #noNotes>
-                <div class="flex flex-auto flex-col items-center justify-center bg-gray-100 dark:bg-transparent">
-                    <mat-icon
-                        class="icon-size-24"
-                        fontIcon="warning"></mat-icon>
-                    <div class="mt-4">There are no notes :-(</div>
-                </div>
+                <ng-container *ngIf="!state.isLoading">
+                    <div class="flex flex-auto flex-col items-center justify-center bg-gray-100 dark:bg-transparent">
+                        <mat-icon
+                            class="icon-size-24"
+                            fontIcon="warning"></mat-icon>
+                        <div class="mt-4">There are no notes :-(</div>
+                    </div>
+                </ng-container>
             </ng-template>
             <ng-container *ngIf="state.error != ''">
                 {{ state.error }}
