@@ -16,7 +16,7 @@ public class CreateNoteCommandHandler : IRequestHandler<CreateNoteCommand, Note>
 
     public async Task<Note> Handle(CreateNoteCommand request, CancellationToken cancellationToken)
     {
-        var note = new Note() { Id = Guid.NewGuid().ToString(), Title = request.Title, Body = request.Text };
+        var note = new Note() { Id = Guid.NewGuid().ToString(), Title = request.Title, Text = request.Text };
         await _noteRepository.CreateAsync(note, cancellationToken);
         return note;
     }

@@ -16,7 +16,7 @@ public class UpdateNoteCommandHandler : IRequestHandler<UpdateNoteCommand, Note>
 
     public async Task<Note> Handle(UpdateNoteCommand request, CancellationToken cancellationToken)
     {
-        var note = new Note() { Id = request.Id, Title = request.Title, Body = request.Body};
+        var note = new Note() { Id = request.Id, Title = request.Title, Text = request.Text};
         await _noteRepository.UpdateAsync(note, cancellationToken);
         return note;
     }

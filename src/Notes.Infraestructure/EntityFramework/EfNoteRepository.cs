@@ -59,7 +59,7 @@ public class EfNoteRepository : INoteRepository
             throw new NoteNotFoundException();
         }
         record.Title = note.Title;
-        record.Body = note.Body;
+        record.Text = note.Text;
         _dbContext.Update(record);
         await _dbContext.SaveChangesAsync(cancellationToken);
     }
