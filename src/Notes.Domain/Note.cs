@@ -9,4 +9,5 @@ public readonly record struct Note
     public string Text { get; init; } = string.Empty;
 
     public Note(string id, string title, string text) => (Id, Title, Text) = (id, title, text);
+
 }
