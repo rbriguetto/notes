@@ -27,8 +27,7 @@ export class NotesService
         return this._state.asObservable();
     }
 
-    public getAll() : Observable<Note[]>
-    {
+    public getAll() : Observable<Note[]> {
         return this._state.pipe(
             take(1),
             tap(state => this._state.next({...state, isLoading: true})),
@@ -46,8 +45,7 @@ export class NotesService
         )
     }
 
-    public createOrUpdate(note: Note) : Observable<Note>
-    {
+    public createOrUpdate(note: Note) : Observable<Note> {
         const isCreating = note.id === '';
         const action = isCreating ? 'create' : 'update';
         return this._state.pipe(
@@ -72,8 +70,7 @@ export class NotesService
         );
     }
 
-    public deleteNote(noteId: string) : Observable<any>
-    {
+    public deleteNote(noteId: string) : Observable<any> {
         return this._state.pipe(
             take(1),
             tap(state => this._state.next({...state, isSaving: true})),
