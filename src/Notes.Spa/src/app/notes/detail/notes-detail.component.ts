@@ -27,7 +27,7 @@ export class NotesDetailComponent
     createForm(note: Note) { this.form = this._formBuilder.group({
             id: note.id,
             title: [note.title, Validators.required],
-            text: [note.text, Validators.required],
+            text: [note.text],
         });
     }
 
