@@ -14,8 +14,7 @@ COPY ["/src/Notes.Api/Notes.Api.csproj", "/server/src/Notes.Api/Notes.Api.csproj
 COPY ["/src/Notes.Application/Notes.Application.csproj", "/server/src/Notes.Application/Notes.Application.csproj"]
 COPY ["/src/Notes.Domain/Notes.Domain.csproj", "/server/src/Notes.Domain/Notes.Domain.csproj"]
 COPY ["/src/Notes.Infraestructure/Notes.Infraestructure.csproj", "/server/src/Notes.Infraestructure/Notes.Infraestructure.csproj"]
-#COPY ["/src/Notes.IntegrationTests/Notes.IntegrationTests.csproj", "/server/src/Notes.IntegrationTests/Notes.IntegrationTests.csproj"]
-#COPY ["/src/Notes.UnitTests/Notes.UnitTests.csproj", "/server/src/Notes.UnitTests/Notes.UnitTests.csproj"]
+COPY ["/src/Notes.IntegrationTests/Notes.IntegrationTests.csproj", "/server/src/Notes.IntegrationTests/Notes.IntegrationTests.csproj"]
 RUN dotnet restore /server/src/Notes.Api/Notes.Api.csproj
 
 COPY . .
